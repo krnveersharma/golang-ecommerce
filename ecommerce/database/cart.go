@@ -1,6 +1,8 @@
 package database
 
-import "errors"
+import (
+	"errors"
+)
 
 var (
 	ErrCantFidProduct     = errors.New("can't find the product")
@@ -12,7 +14,7 @@ var (
 	ErrCantBuyCartItem    = errors.New("cannot update the purchase")
 )
 
-func AddProductTOCart() {
+func AddProductToCart() {
 
 }
 

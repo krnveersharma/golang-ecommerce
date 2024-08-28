@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/krnveersharma/ecommerce/controllers"
 	"github.com/krnveersharma/ecommerce/database"
 	"github.com/krnveersharma/ecommerce/middleware"
 	"github.com/krnveersharma/ecommerce/routes"
@@ -16,7 +15,7 @@ func main() {
 	if port == "" {
 		port = "8000"
 	}
-	app := controllers.NewApplication(database.ProductData(database.Client, "Products"), database.UserData(database.Client, "Users"))
+	app := database.NewApplication(database.ProductData(database.Client, "Products"), database.UserData(database.Client, "Users"))
 	router := gin.New()
 	router.Use(gin.Logger())
 	routes.UserRoutes(router)
